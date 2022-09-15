@@ -5,6 +5,7 @@ exports.getAllUsers = async (req,res) => {
 
     try {
         res.send(users);
+        console.log('User respond send successfully');
     } catch (err) {
         res.status(500).send(err);
     }
