@@ -33,7 +33,7 @@ exports.getUserDemoCode = async (req, res) => {
             res.status(200).send(client.clientDemoCode);
         }
         else {
-            rest.status(500).send(err);
+            res.status(500).send(err);
         }
     });
 }
