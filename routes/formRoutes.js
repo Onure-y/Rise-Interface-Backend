@@ -8,6 +8,6 @@ router
   .get(formController.getAllForms)
   .post(formController.createClientForm);
 
-router.route("/:userFullName").get(formController.getUserDemoCode);
+router.route("/:userEmail").get(formController.getUserDemoCode);
 
 module.exports = router;

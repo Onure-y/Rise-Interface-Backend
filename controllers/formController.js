@@ -10,11 +10,9 @@ exports.createClientForm = async (req, res) => {
     });
 
     newForm.save().then(() => {
-        console.log("sucsess");
         res.status(200).send("sucsess");
     }).catch(err => {
         res.status(500).send(err);
-        console.log("Error! = ", err);
     });
 }
 
@@ -30,10 +28,7 @@ exports.getAllForms = async (req,res) => {
 }
 
 exports.getUserDemoCode = async (req, res) => {
-    // console.log(req.params.userFullName)
-    FormModel.findOne({ clientFullName : req.params.userFullName}, function (err, client) {
-
-
+    FormModel.findOne({ clientMail : req.params.userEmail}, function (err, client) {
         res.status(200).send(client.clientDemoCode);
     });
 }
