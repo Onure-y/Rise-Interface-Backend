@@ -1,12 +1,14 @@
 const FormModel = require("../models/formModel");
 
 exports.createClientForm = async (req, res) => {
-    var randomDemoValue = Math.floor(Math.random() * 1000000) 
+    var randomDemoValue = Math.floor(Math.random() * 1000000);
+    let timestamp = Date.now();
     const newForm = new FormModel({
         clientMail : req.body.clientMail,
         clientFullName: req.body.clientFullName,
         clientTelephoneNumber: req.body.clientTelephoneNumber,
         clientDemoCode : randomDemoValue,
+        clientTime : timestamp,
     });
 
     newForm.save().then(() => {

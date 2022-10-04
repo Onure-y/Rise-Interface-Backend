@@ -5,6 +5,7 @@ const formSchema = new mongoose.Schema({
     clientFullName: String,
     clientTelephoneNumber:String,
     clientDemoCode : String,
+    clientTime : Number,
 });
 
 const FormModel = mongoose.model('clients',formSchema);
