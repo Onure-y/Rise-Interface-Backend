@@ -29,6 +29,11 @@ exports.getAllForms = async (req,res) => {
 
 exports.getUserDemoCode = async (req, res) => {
     FormModel.findOne({ clientMail : req.params.userEmail}, function (err, client) {
-        res.status(200).send(client.clientDemoCode);
+        if(client.clientDemoCode != null) {
+            res.status(200).send(client.clientDemoCode);
+        }
+        else {
+            rest.status(500).send(err);
+        }
     });
 }
